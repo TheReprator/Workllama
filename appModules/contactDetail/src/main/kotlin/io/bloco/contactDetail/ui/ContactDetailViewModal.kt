@@ -46,14 +46,13 @@ class ContactDetailViewModal @Inject constructor(
     val contact: LiveData<ContactModals> = _contact
 
     init {
-        Timber.e("sharedCoroutine in detail:: $sharedCoroutine")
         viewModelScope.launch {
             sharedCoroutine.tickFlow.collect {
 
                 if (contact.value.isNotNull()) {
                     Timber.e("sharedCoroutine collect detail contact:: $it")
-                    if (contact.value!!.id == it.second.id)
-                        _contact.value = it.second
+                    if (contact.value!!.id == it.id)
+                        _contact.value = it
                 }
                 Timber.e("sharedCoroutine collect detail:: $it")
             }

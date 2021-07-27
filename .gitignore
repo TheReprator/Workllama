@@ -2,6 +2,7 @@
 /.gradle/*
 /.idea/
 /.idea/*
+/.idea/**
 /database/build/
 /base-android/build/
 /buildSrc/.gradle/
@@ -14,4 +15,3 @@
 /appModules/contactDetail/build/
 /appModules/contactList/build/
 /appModules/contactSharedModule/build/
-/.idea/

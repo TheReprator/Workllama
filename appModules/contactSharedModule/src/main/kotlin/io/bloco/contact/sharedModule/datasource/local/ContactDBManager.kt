@@ -62,21 +62,21 @@ class ContactListDBManagerImpl @Inject constructor(
                 dbManager.getContactList(count, offset).catch {
                     if (continuation.isActive)
                         continuation.resume(AppError(message = "DB Error Occurred"))
-                    else
+                   /* else
                         Timber.e("continuation isCompleted: ${continuation.isCompleted},isCancelled: ${continuation.isCancelled}")
-                }.collect {
+*/                }.collect {
                     if (it.isEmpty()) {
                         if (continuation.isActive)
                             continuation.resume(AppError(message = "No Item Found"))
-                        else
+                       /* else
                             Timber.e("continuation isCompleted: ${continuation.isCompleted},isCancelled: ${continuation.isCancelled}")
-
+*/
                     } else {
                         if (continuation.isActive)
                             continuation.resume(AppSuccess(contactLocalMapper.mapTo(it)))
-                        else
+                       /* else
                             Timber.e("continuation isCompleted: ${continuation.isCompleted},isCancelled: ${continuation.isCancelled}")
-                    }
+*/                    }
                 }
             }
         }

@@ -42,15 +42,19 @@ class ContactListViewModal @Inject constructor(
     val contactList: LiveData<List<ContactModals>> = _contactList
 
     init {
-        Timber.e("sharedCoroutine in list:: $sharedCoroutine")
         viewModelScope.launch {
-            sharedCoroutine.tickFlow.collect {
+            sharedCoroutine.tickFlow.collect { updatedContact ->
 
-                Timber.e("sharedCoroutine collect list:: $it")
+                Timber.e("sharedCoroutine collect list:: $updatedContact")
 
                 val newContactList = contactList.value!!.toMutableList()
-                newContactList[it.first] = it.second
 
+                val index = newContactList.indexOfFirst { it.id == updatedContact.id }
+
+                if (-1 >= index)
+                    return@collect
+
+                newContactList[index] = updatedContact
                 _contactList.value = newContactList
             }
 
@@ -127,12 +131,7 @@ class ContactListViewModal @Inject constructor(
 
         isLoadInProgress = true
 
-        val contactLoadElement = ContactModals(-1L)
-
-        val newList = contactList.value!!.toMutableList()
-        newList.add(contactLoadElement)
-
-        _contactList.value = newList
+        addLoaderElement()
 
         pageNumber++
 
@@ -147,6 +146,15 @@ class ContactListViewModal @Inject constructor(
             removeLoaderElement()
             isLoadInProgress = false
         })
+    }
+
+    private fun addLoaderElement(){
+        val contactLoadElement = ContactModals(-1L)
+
+        val newList = contactList.value!!.toMutableList()
+        newList.add(contactLoadElement)
+
+        _contactList.value = newList
     }
 
     private fun removeLoaderElement() {
@@ -181,7 +189,7 @@ class ContactListViewModal @Inject constructor(
                     when (it) {
                         is AppSuccess -> {
                             updateIsFavouriteStatus(position, true, it.data)
-                            sharedCoroutine.updateFlow(it.data, position)
+                            sharedCoroutine.updateFlow(it.data)
                         }
                         is AppError -> {
                             updateIsFavouriteStatus(position)

@@ -10,13 +10,13 @@ import javax.inject.Inject
 @ActivityRetainedScoped
 class SharedCoroutine @Inject constructor() {
 
-    private val _tickFlow = MutableSharedFlow<Pair<Int, ContactModals>>(
+    private val _tickFlow = MutableSharedFlow<ContactModals>(
         replay = 1
     )
-    val tickFlow: SharedFlow<Pair<Int, ContactModals>> = _tickFlow
+    val tickFlow: SharedFlow<ContactModals> = _tickFlow
 
-    fun updateFlow(contactModal: ContactModals, index: Int = contactModal.id.toInt() - 1) {
-        val res = _tickFlow.tryEmit(Pair(index, contactModal))
+    fun updateFlow(contactModal: ContactModals) {
+        val res = _tickFlow.tryEmit(contactModal)
         Timber.e("fetch result is: $res")
     }
 }
