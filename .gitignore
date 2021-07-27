@@ -1,5 +1,7 @@
 /.gradle/
+/.gradle/*
 /.idea/
+/.idea/*
 /database/build/
 /base-android/build/
 /buildSrc/.gradle/
