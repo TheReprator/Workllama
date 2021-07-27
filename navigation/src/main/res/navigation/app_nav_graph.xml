@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/navigation_contactList"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/navigation_contactList"
+        android:name="io.bloco.contactlist.ui.ContactList"
+        android:label="ContactList Fragment"
+        tools:layout="@layout/fragment_contactlist">
+
+        <action
+            android:id="@+id/navigation_contactList_to_navigation_contactDetail"
+            app:destination="@id/navigation_contactDetail"/>
+
+        <!--<action
+            android:id="@+id/navigation_contactList_to_navigation_contactDetail"
+            app:destination="@id/navigation_contactDetail"
+            app:popUpTo="@+id/navigation_contactList"
+            app:popUpToInclusive="true"/>-->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_contactDetail"
+        android:name="io.bloco.contactDetail.ui.ContactDetail"
+        android:label="Contact Detail"
+        tools:layout="@layout/fragment_contactdetail">
+
+        <argument
+            android:name="userId"
+            app:argType="string"
+            app:nullable="false" />
+
+    </fragment>
+</navigation>

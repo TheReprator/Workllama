@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="contactListAdapter"
+            type="io.bloco.contactlist.ui.ContactListAdapter" />
+
+        <variable
+            name="contactViewModal"
+            type="io.bloco.contactlist.ui.ContactListViewModal" />
+    </data>
+
+    <FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/contactListToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                app:menu="@menu/searchmenu"
+                app:title="Contact List" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/contactListRecyclerView"
+                recyclerListAdapter="@{contactListAdapter}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_contact" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/contactList_loaderErrorHandler"
+            clickListener="@{() -> contactViewModal.retryContactList()}"
+            exceptionError="@{contactViewModal.errorMsg}"
+            isEmpty="@{TextUtils.isEmpty(contactViewModal.errorMsg) &amp;&amp; !contactViewModal.isLoading &amp;&amp; contactViewModal.contactList.empty }"
+            isError="@{TextUtils.isEmpty(contactViewModal.errorMsg) ? false : true}"
+            isLoading="@{contactViewModal.isLoading}"
+            layout="@layout/layout_loader_error_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+</layout>

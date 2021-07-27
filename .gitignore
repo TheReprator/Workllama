@@ -1,0 +1,12 @@
+/.gradle/
+/.idea/
+/database/build/
+/base-android/build/
+/buildSrc/.gradle/
+/buildSrc/build/
+/build/
+/base/build/
+/app/build/
+/appModules/contactDetail/build/
+/appModules/contactList/build/
+/appModules/contactSharedModule/build/

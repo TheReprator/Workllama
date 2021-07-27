@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "success": true,
+    "message": "Successfully Fetched Contacts",
+    "pageNumber": 1,
+    "pageSize": 10
+  },
+  "content": [
+    {
+      "id": 1,
+      "name": "BG",
+      "phone": "+91 9042956129",
+      "thumbnail": "/iie-service/static/images/1.jpg",
+      "email": "bg@goforbg.com",
+      "isStarred": 0
+    },
+    {
+      "id": 2,
+      "name": "Surya",
+      "phone": "+91 90424 53339",
+      "thumbnail": "/iie-service/static/images/2.jpg",
+      "email": "surya@ss.com",
+      "isStarred": 0
+    },
+    {
+      "id": 3,
+      "name": "Sujith",
+      "phone": "+91 98429 11129",
+      "thumbnail": "/iie-service/static/images/3.jpg",
+      "email": "sujith@ss.com",
+      "isStarred": 0
+    },
+    {
+      "id": 4,
+      "name": "Arabin",
+      "phone": "+91 95529 22129",
+      "thumbnail": "/iie-service/static/images/4.jpg",
+      "email": "arabin@ss.com",
+      "isStarred": 1
+    },
+    {
+      "id": 5,
+      "name": "James",
+      "phone": "504-621-8927",
+      "thumbnail": "/iie-service/static/images/5.jpg",
+      "email": "jbutt@gmail.com",
+      "isStarred": 1
+    },
+    {
+      "id": 6,
+      "name": "Josephine",
+      "phone": "810-292-9388",
+      "thumbnail": "/iie-service/static/images/6.jpg",
+      "email": "josephine_darakjy@darakjy.org",
+      "isStarred": 0
+    },
+    {
+      "id": 7,
+      "name": "Art",
+      "phone": "856-636-8749",
+      "thumbnail": "/iie-service/static/images/7.jpg",
+      "email": "art@venere.org",
+      "isStarred": 0
+    },
+    {
+      "id": 8,
+      "name": "Lenna",
+      "phone": "907-385-4412",
+      "thumbnail": "/iie-service/static/images/8.jpg",
+      "email": "lpaprocki@hotmail.com",
+      "isStarred": 0
+    },
+    {
+      "id": 9,
+      "name": "Donette",
+      "phone": "513-570-1893",
+      "thumbnail": "/iie-service/static/images/9.jpg",
+      "email": "donette.foller@cox.net",
+      "isStarred": 0
+    },
+    {
+      "id": 10,
+      "name": "Simona",
+      "phone": "419-503-2484",
+      "thumbnail": "/iie-service/static/images/10.jpg",
+      "email": "simona@morasca.com",
+      "isStarred": 0
+    }
+  ]
+}

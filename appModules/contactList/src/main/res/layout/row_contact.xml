@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contactModal"
+            type="io.bloco.contact.sharedModule.modals.ContactModals" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/contact_row_item_cornerRadius"
+        app:cardUseCompatPadding="false"
+        app:contentPadding="@dimen/contact_row_item_padding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/contactUpdateLoader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                style="?android:attr/progressBarStyleSmall"
+                app:layout_constraintEnd_toStartOf="@+id/contactUpdateStatus"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/contactUpdateStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_status_update"
+                android:layout_marginStart="@dimen/contact_row_status_marginLeft"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/contactUpdateLoader"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Group
+                tools:visibility="visible"
+                goneUnless="@{contactModal.update, default = true}"
+                android:id="@+id/contactUpdateGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="contactUpdateLoader, contactUpdateStatus" />
+
+            <ImageView
+                android:id="@+id/contactImage"
+                imageUrl="@{@string/contact_image_url(contactModal.thumbnail)}"
+                android:layout_width="@dimen/contact_row_pic_width"
+                android:layout_height="@dimen/contact_row_pic_height"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactUpdateLoader"
+                tools:src="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/contactIsFavourite"
+                android:src="@{contactModal.isStarred ? @drawable/ic_favourite : @drawable/ic_unfavourite, default= @drawable/ic_favourite}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                isViewDisabled = "@{!contactModal.isUpdate}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactUpdateLoader"
+                tools:src="@drawable/ic_unfavourite" />
+
+            <TextView
+                android:id="@+id/contactName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="@sample/contactList.json/content/name"
+                android:text="@{contactModal.name}"
+                android:layout_marginStart="@dimen/contact_row_name_marginLeft"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/contactIsFavourite"
+                app:layout_constraintEnd_toStartOf="@+id/contactIsFavourite"
+                app:layout_constraintStart_toEndOf="@+id/contactImage"
+                app:layout_constraintTop_toTopOf="@+id/contactIsFavourite" />
+
+            <TextView
+                android:id="@+id/contactPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="@sample/contactList.json/content/phone"
+                android:text="@{contactModal.phone}"
+                android:layout_marginLeft="@dimen/contact_row_text_marginLeft"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintEnd_toStartOf="@+id/contactIsFavourite"
+                app:layout_constraintStart_toEndOf="@+id/contactImage"
+                app:layout_constraintTop_toBottomOf="@+id/contactIsFavourite" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

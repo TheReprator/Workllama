@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="contact_row_pic_width">60dp</dimen>
+    <dimen name="contact_row_pic_height">110dp</dimen>
+    <dimen name="contact_row_text_marginLeft">10dp</dimen>
+    <dimen name="contact_row_item_padding">10dp</dimen>
+    <dimen name="contact_row_item_cornerRadius">-1dp</dimen>
+    <dimen name="contact_row_status_marginLeft">10dp</dimen>
+    <dimen name="contact_row_name_marginLeft">10dp</dimen>
+</resources>

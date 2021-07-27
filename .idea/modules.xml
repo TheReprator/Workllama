@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Workllama.iml" filepath="$PROJECT_DIR$/.idea/modules/Workllama.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Workllama.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Workllama.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appModules/Workllama.appModules.iml" filepath="$PROJECT_DIR$/.idea/modules/appModules/Workllama.appModules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appModules/contactDetail/Workllama.appModules.contactDetail.iml" filepath="$PROJECT_DIR$/.idea/modules/appModules/contactDetail/Workllama.appModules.contactDetail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appModules/contactList/Workllama.appModules.contactList.iml" filepath="$PROJECT_DIR$/.idea/modules/appModules/contactList/Workllama.appModules.contactList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appModules/contactSharedModule/Workllama.appModules.contactSharedModule.iml" filepath="$PROJECT_DIR$/.idea/modules/appModules/contactSharedModule/Workllama.appModules.contactSharedModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/Workllama.base.iml" filepath="$PROJECT_DIR$/.idea/modules/base/Workllama.base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base-android/Workllama.base-android.iml" filepath="$PROJECT_DIR$/.idea/modules/base-android/Workllama.base-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Workllama.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Workllama.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/database/Workllama.database.iml" filepath="$PROJECT_DIR$/.idea/modules/database/Workllama.database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/Workllama.navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/Workllama.navigation.iml" />
+    </modules>
+  </component>
+</project>

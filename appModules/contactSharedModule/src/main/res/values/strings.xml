@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_image_url">https://iie-service-dev.workingllama.com%1s</string>
+    <string name="contact_status_update">Updating. Please Wait...</string>
+
+</resources>

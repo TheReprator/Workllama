@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="Workllama.app" target="11" />
+      <module name="Workllama.appModules.contactDetail" target="11" />
+      <module name="Workllama.appModules.contactList" target="11" />
+      <module name="Workllama.appModules.contactSharedModule" target="11" />
+      <module name="Workllama.base-android" target="11" />
+      <module name="Workllama.buildSrc" target="11" />
+      <module name="Workllama.navigation" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
